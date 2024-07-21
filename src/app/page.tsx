@@ -58,7 +58,12 @@ export default function Home() {
                 </p>
                 <p className="text-lg md:text-xl text-neutral-400">
                     Currently working on{" "}
-                    <Link href="https://meteors.cc/" className="font-semibold text-white">
+                    <Link
+                        href="https://meteors.cc/"
+                        className="font-semibold text-white"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
                         meteors.cc
                         <ArrowUpRight
                             className="inline-block h-3 w-3 -mt-3"
