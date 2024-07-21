@@ -121,7 +121,7 @@ export default function Work() {
                     More stuff soon!
                 </h1>
                 <p className="text-lg md:text-xl mt-2 text-neutral-400">
-                    I'm always working on something new.
+                    I&apos;m always working on something new.
                 </p>
             </div>
         </main>
