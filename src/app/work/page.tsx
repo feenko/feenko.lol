@@ -73,7 +73,7 @@ export default function Work() {
                 </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:px-44 px-4 pb-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:px-44 px-4 pb-28">
                 {work.map((project) => (
                     <a
                         href={project.url}
@@ -105,6 +105,24 @@ export default function Work() {
                         </div>
                     </a>
                 ))}
+            </div>
+
+            {/* find more stuff soon */}
+            <div className="flex flex-col items-center justify-center text-center pb-28">
+                <h1
+                    className="text-3xl md:text-4xl font-bold mt-4"
+                    style={{
+                        background:
+                            "linear-gradient(0deg, rgba(200,200,200,1) 0%, rgba(255,255,255,1) 100%)",
+                        WebkitBackgroundClip: "text",
+                        WebkitTextFillColor: "transparent",
+                    }}
+                >
+                    More stuff soon!
+                </h1>
+                <p className="text-lg md:text-xl mt-2 text-neutral-400">
+                    I'm always working on something new.
+                </p>
             </div>
         </main>
     );

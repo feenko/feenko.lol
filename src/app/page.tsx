@@ -139,7 +139,7 @@ export default function Home() {
                                     height={80}
                                 />
                                 <div className="space-y-1.5 py-1">
-                                    <div className="font-semibold text-white text-left text-sm md:text-base">
+                                    <div className="font-semibold text-white text-left text-sm md:text-base overflow-hidden">
                                         {data.spotify.song.length > 20
                                             ? data.spotify.song.slice(0, 20) + "..."
                                             : data.spotify.song}
