@@ -10,7 +10,8 @@ export const metadata: Metadata = {
         "og:description": "Software Engineer, Designer, and Music Enthusiast",
         "og:url": "https://feenko.lol/",
         "og:title": "feenko.lol",
-        "theme-color": "#010101",
+        "og:image": "https://feenko.lol/hello.png",
+        "theme-color": "#ffffff",
     },
 };
 
