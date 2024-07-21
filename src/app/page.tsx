@@ -1,113 +1,188 @@
+"use client";
+
+import {
+    ArrowUpRight,
+    DiscordLogo,
+    GithubLogo,
+    LastfmLogo,
+    SteamLogo,
+    XLogo,
+} from "@phosphor-icons/react/dist/ssr";
+import Navbar from "@/components/navbar";
+import { useEffect, useState } from "react";
+import Link from "next/link";
 import Image from "next/image";
 
 export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+    const [data, setData] = useState<Record<string, any>>({});
+    const [loading, setLoading] = useState(true);
+    const [listeningToSpotify, setListeningToSpotify] = useState(false);
 
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+    const fetchData = () => {
+        fetch("https://api.lanyard.rest/v1/users/1155452926970577008")
+            .then((res) => res.json())
+            .then((data) => {
+                setData(data.data);
+                setListeningToSpotify(data.data.listening_to_spotify);
+                setLoading(false);
+            });
+    };
 
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+    useEffect(() => {
+        fetchData();
+    }, []);
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+    useEffect(() => {
+        const interval = setInterval(fetchData, 30000);
+        return () => clearInterval(interval);
+    }, []);
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
+    return (
+        <main>
+            <Navbar />
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  );
+            <div className="flex flex-col items-center justify-center h-screen magicpattern text-center">
+                <h1
+                    className="text-6xl md:text-7xl font-bold mt-4"
+                    style={{
+                        background:
+                            "linear-gradient(0deg, rgba(200,200,200,1) 0%, rgba(255,255,255,1) 100%)",
+                        WebkitBackgroundClip: "text",
+                        WebkitTextFillColor: "transparent",
+                    }}
+                >
+                    feenko.lol
+                </h1>
+                <p className="text-lg md:text-xl mt-2 text-neutral-400">
+                    Software Engineer, Designer, and Music Enthusiast
+                </p>
+                <p className="text-lg md:text-xl text-neutral-400">
+                    Currently working on{" "}
+                    <Link href="https://meteors.cc/" className="font-semibold text-white">
+                        meteors.cc
+                        <ArrowUpRight
+                            className="inline-block h-3 w-3 -mt-3"
+                            weight="bold"
+                        />
+                    </Link>
+                </p>
+
+                <div className="flex mt-8 space-x-2">
+                    <div className="tooltip">
+                        <GithubLogo
+                            className="h-7 w-7 text-white opacity-70 hover:opacity-100 transition-opacity duration-200"
+                            weight="fill"
+                        />
+                        <span className="tooltiptext">@feenko</span>
+                    </div>
+                    <div className="tooltip">
+                        <XLogo
+                            className="h-7 w-7 text-white opacity-70 hover:opacity-100 transition-opacity duration-200"
+                            weight="fill"
+                        />
+                        <span className="tooltiptext">@feenekbruh</span>
+                    </div>
+                    <div className="tooltip">
+                        <SteamLogo
+                            className="h-7 w-7 text-white opacity-70 hover:opacity-100 transition-opacity duration-200"
+                            weight="fill"
+                        />
+                        <span className="tooltiptext">id/feenko</span>
+                    </div>
+                    <div className="tooltip">
+                        <DiscordLogo
+                            className="h-7 w-7 text-white opacity-70 hover:opacity-100 transition-opacity duration-200"
+                            weight="fill"
+                        />
+                        <span className="tooltiptext">@feenko</span>
+                    </div>
+                    <div className="tooltip">
+                        <LastfmLogo
+                            className="h-7 w-7 text-white opacity-70 hover:opacity-100 transition-opacity duration-200"
+                            weight="fill"
+                        />
+                        <span className="tooltiptext">@feenko</span>
+                    </div>
+                </div>
+
+                {loading ? (
+                    <div className="mt-8 mx-2 w-80 md:w-96 bg-black border border-neutral-600/60 p-4 rounded-lg hover:opacity-90 transition-opacity duration-200">
+                        <div className="animate-pulse flex space-x-4">
+                            <div className="h-20 w-20 md:h-[5.5rem] md:w-[5.5rem] bg-neutral-600 rounded-lg"></div>
+                            <div className="flex-1 space-y-3 py-1">
+                                <div className="h-4 bg-neutral-600 rounded w-3/4"></div>
+                                <div className="space-y-2">
+                                    <div className="h-4 bg-neutral-600 rounded"></div>
+                                    <div className="h-4 bg-neutral-600 rounded w-5/6"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                ) : listeningToSpotify ? (
+                    <a
+                        href="https://last.fm/user/feenko"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <div className="mt-8 mx-2 w-80 md:w-96 bg-black border border-neutral-600/60 p-4 rounded-lg hover:opacity-90 transition-opacity duration-200">
+                            <div className="flex space-x-4">
+                                <Image
+                                    src={data.spotify.album_art_url}
+                                    alt="spotify cover"
+                                    className="h-20 w-20 md:h-[5.5rem] md:w-[5.5rem] rounded-lg"
+                                    width={80}
+                                    height={80}
+                                />
+                                <div className="space-y-1.5 py-1">
+                                    <div className="font-semibold text-white text-left text-sm md:text-base">
+                                        {data.spotify.song.length > 20
+                                            ? data.spotify.song.slice(0, 20) + "..."
+                                            : data.spotify.song}
+                                    </div>
+                                    <div className="space-y-0">
+                                        <div className="text-neutral-400 text-left text-sm md:text-base">
+                                            by{" "}
+                                            {data.spotify.artist.length > 18
+                                                ? data.spotify.artist.slice(0, 18) + "..."
+                                                : data.spotify.artist}
+                                        </div>
+                                        <div className="text-neutral-400 text-left text-sm md:text-base">
+                                            on{" "}
+                                            {data.spotify.album.length > 18
+                                                ? data.spotify.album.slice(0, 18) + "..."
+                                                : data.spotify.album}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                ) : (
+                    <a
+                        href="https://last.fm/user/feenko"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <div className="mt-8 mx-2 w-80 md:w-96 bg-black border border-neutral-600/60 p-4 rounded-lg hover:opacity-90 transition-opacity duration-200">
+                            <div className="flex space-x-4">
+                                <Image
+                                    src="https://community.spotify.com/t5/image/serverpage/image-id/55829iC2AD64ADB887E2A5?v=v2"
+                                    alt="spotify cover"
+                                    className="h-20 w-20 md:h-[5.5rem] md:w-[5.5rem] rounded-lg"
+                                />
+                                <div className="space-y-1.5 py-1">
+                                    <div className="font-semibold text-white text-left text-sm md:text-base">
+                                        Not listening to Spotify
+                                    </div>
+                                    <div className="space-y-0">
+                                        <div className="text-neutral-400 text-left text-sm md:text-base"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                )}
+            </div>
+        </main>
+    );
 }
