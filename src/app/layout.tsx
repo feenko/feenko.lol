@@ -2,27 +2,43 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 import { GeistSans } from "geist/font/sans";
+import Navbar from "@/components/layout/navbar";
+import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
-    title: "feenko.lol",
+    title: {
+        template: "%s — feenko.lol",
+        default: "home — feenko.lol",
+    },
     description: "Software Engineer, Designer, and Music Enthusiast",
-    other: {
-        "og:description": "Software Engineer, Designer, and Music Enthusiast",
-        "og:url": "https://feenko.lol/",
-        "og:title": "feenko.lol",
-        "og:image": "https://feenko.lol/hello.png",
-        "theme-color": "#ffffff",
+    openGraph: {
+        type: "website",
+        locale: "en_US",
+        siteName: "feenko.lol",
+        description: "Software Engineer, Designer, and Music Enthusiast",
+        url: "https://feenko.lol/",
+        title: "feenko.lol",
+        images: [
+            {
+                url: "https://feenko.lol/hello.png",
+                width: 256,
+                height: 256,
+            },
+        ],
     },
 };
 
-export default function RootLayout({
+const Layout: React.FC<Readonly<{ children: React.ReactNode }>> = ({
     children,
-}: Readonly<{
-    children: React.ReactNode;
-}>) {
+}) => {
     return (
         <html lang="en">
-            <body className={GeistSans.className}>{children}</body>
+            <body className={cn("antialiased", GeistSans.className)}>
+                <Navbar />
+                {children}
+            </body>
         </html>
     );
-}
+};
+
+export default Layout;
