@@ -1,27 +1,33 @@
-"use client";
-
-import Navbar from "@/components/navbar";
+import Button from "@/components/ui/button";
+import Title from "@/components/ui/title";
+import { GithubLogo } from "@phosphor-icons/react/dist/ssr";
+import { Metadata } from "next";
 import Link from "next/link";
 
-export default function NotFound() {
-    return (
-        <main>
-            <Navbar />
+export const metadata: Metadata = {
+    title: "404",
+    description: "Page not found",
+};
 
-            <div className="flex flex-col items-center justify-center h-screen magicpattern text-center">
-                <h1
-                    className="text-6xl md:text-7xl font-bold mt-4"
-                    style={{
-                        background:
-                            "linear-gradient(0deg, rgba(200,200,200,1) 0%, rgba(255,255,255,1) 100%)",
-                        WebkitBackgroundClip: "text",
-                        WebkitTextFillColor: "transparent",
-                    }}
-                >
-                    404
-                </h1>
-                <p className="text-lg md:text-xl mt-2 text-neutral-400">Page not found</p>
+const NotFound: React.FC = () => {
+    return (
+        <>
+            <div className="flex flex-col items-center justify-center h-screen text-center magicpattern">
+                <Title gradient>404</Title>
+
+                <p className="text-lg md:text-xl text-neutral-400 mt-2 max-w-md">
+                    Oops, we broke it! 404 – Page not found, but at least you
+                    found this awesome message.
+                </p>
+
+                <div className="mt-4 flex space-x-2">
+                    <Link href="/">
+                        <Button className="h-full">Go Back Home</Button>
+                    </Link>
+                </div>
             </div>
-        </main>
+        </>
     );
-}
+};
+
+export default NotFound;
