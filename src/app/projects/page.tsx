@@ -39,6 +39,14 @@ const work: Project[] = [
         url: "#",
         tags: ["TypeScript", "Bun", "Discord.js", "MongoDB", "Lavalink"],
     },
+    {
+        title: "Spotify Keychain 3D Model Generator",
+        description:
+            "A beautifully designed and user-friendly 3D model generator for Spotify Keychains",
+        image: "/spotify-keychain.png",
+        url: "https://github.com/feenko/spotify-3d-keychain",
+        tags: ["Python", "PySide6", "Pillow", "CadQuery"],
+    },
 ];
 
 const Projects: React.FC = () => {
