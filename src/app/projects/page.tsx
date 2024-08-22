@@ -34,7 +34,7 @@ const work: Project[] = [
     {
         title: "alienMusic",
         description:
-            "A music bot for discord. Originally made by me and @aruuvi, now is not maintained anymore.",
+            "A music bot for discord. Originally made by me and @aruuvi, now its maintained by someone else.",
         image: "/alienmusic.png",
         url: "#",
         tags: ["TypeScript", "Bun", "Discord.js", "MongoDB", "Lavalink"],
