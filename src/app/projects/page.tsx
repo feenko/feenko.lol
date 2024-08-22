@@ -69,9 +69,12 @@ const Projects: React.FC = () => {
                     <BlurFade key={index} delay={0.17 * (index + 4)} inView>
                         <a
                             href={project.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
                             key={project.title}
+                            {...{
+                                ...(project.url === "#"
+                                    ? {}
+                                    : { target: "_blank", rel: "noreferrer" }),
+                            }}
                         >
                             <div className="rounded-xl overflow-hidden bg-black border border-neutral-600/60 hover:opacity-90 transition-opacity duration-200">
                                 <Image
