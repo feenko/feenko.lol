@@ -27,6 +27,7 @@ export const metadata: Metadata = {
     ],
     type: 'website',
   },
+  themeColor: '#010101',
 };
 
 const Layout: React.FC<Readonly<{ children: React.ReactNode }>> = ({
