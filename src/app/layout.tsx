@@ -7,8 +7,8 @@ import { cn } from '@/lib/utils';
 
 export const metadata: Metadata = {
   title: {
-    template: '%s • feenko.lol portfolio: developer & designer',
-    default: 'home • feenko.lol portfolio: developer & designer',
+    template: '%s • feenko.lol portfolio: developer & designer from Poland',
+    default: 'home • feenko.lol portfolio: developer & designer from Poland',
   },
   description: 'Software Engineer, Designer, and Music Enthusiast',
   openGraph: {
