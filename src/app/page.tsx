@@ -1,13 +1,11 @@
 'use client';
 
 import {
-  ArrowUpRight,
   Clock,
   MapPinSimple,
 } from '@phosphor-icons/react/dist/ssr';
 
 import { BlurFade } from '@/components/ui/blur-fade';
-import Link from 'next/link';
 import { Title } from '@/components/ui/title';
 
 const Home: React.FC = () => {
