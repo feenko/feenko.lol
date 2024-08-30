@@ -7,7 +7,7 @@ import { Title } from '@/components/ui/title';
 import { projects } from '@/lib/constants';
 
 export const metadata: Metadata = {
-  title: 'Projects',
+  title: 'projects',
   description: 'My work, projects, and contributions',
 };
 
