@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   description:
     'Hi, I’m Feenko, also known as Szymon, a developer based in Warsaw, Poland. I specialize in Next.js and am looking for new job opportunities. Check out my portfolio to see my work and skills. Let’s connect if you’re interested in collaborating or hiring a developer.',
   openGraph: {
-    title: 'feenko.lol portfolio: developer & designer from Poland',
+    title: 'feenko.lol portfolio: developer & designer',
     description: 'Developer, designer, and music enthusiast',
     url: 'https://feenko.lol',
     siteName: 'Feenko’s Portfolio',
