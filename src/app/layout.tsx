@@ -10,21 +10,22 @@ export const metadata: Metadata = {
     template: '%s • feenko.lol portfolio: developer & designer from Poland',
     default: 'home • feenko.lol portfolio: developer & designer from Poland',
   },
-  description: 'Software Engineer, Designer, and Music Enthusiast',
+  description:
+    'Hi, I’m Feenko, also known as Szymon, a developer based in Warsaw, Poland. I specialize in Next.js and am looking for new job opportunities. Check out my portfolio to see my work and skills. Let’s connect if you’re interested in collaborating or hiring a developer.',
   openGraph: {
-    type: 'website',
-    locale: 'en_US',
-    siteName: 'feenko.lol',
-    description: 'Software Engineer, Designer, and Music Enthusiast',
-    url: 'https://feenko.lol/',
-    title: 'feenko.lol',
+    title: 'feenko.lol portfolio: developer & designer from Poland',
+    description: 'Developer, designer, and music enthusiast',
+    url: 'https://feenko.lol',
+    siteName: 'Feenko’s Portfolio',
     images: [
       {
-        url: 'https://feenko.lol/hello.png',
-        width: 256,
-        height: 256,
+        url: 'https://feenko.lol/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Feenko’s Portfolio',
       },
     ],
+    type: 'website',
   },
 };
 
