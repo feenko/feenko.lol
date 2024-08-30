@@ -7,8 +7,8 @@ import { cn } from '@/lib/utils';
 
 export const metadata: Metadata = {
   title: {
-    template: '%s • feenko.lol portfolio: developer & designer from Poland',
-    default: 'home • feenko.lol portfolio: developer & designer from Poland',
+    template: '%s • feenko.lol portfolio: developer & designer',
+    default: 'home • feenko.lol portfolio: developer & designer',
   },
   description:
     'Hi, I’m Feenko, also known as Szymon, a developer based in Warsaw, Poland. I specialize in Next.js and am looking for new job opportunities. Check out my portfolio to see my work and skills. Let’s connect if you’re interested in collaborating or hiring a developer.',
