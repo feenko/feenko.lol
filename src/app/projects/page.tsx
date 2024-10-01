@@ -28,22 +28,22 @@ const Project: React.FC<{
     <Image
       src={image}
       alt={title}
-      width={800}
-      height={400}
+      width={1000}
+      height={1000}
       className="w-full h-52 object-cover"
-      placeholder="blur"
+      placeholder={imageBlurData ? 'blur' : undefined}
       blurDataURL={imageBlurData}
     />
 
-    <div className="p-4">
+    <div className="p-4 py-5">
       <h2 className="text-2xl font-semibold">{title}</h2>
-      <p className="text-neutral-400">{description}</p>
+      <p className="text-neutral-400 mt-1">{description}</p>
 
-      <div className="flex flex-wrap mt-2">
+      <div className="flex flex-wrap mt-2.5">
         {tags.map((tag) => (
           <span
             key={tag}
-            className="bg-black text-white border border-neutral-600/60 rounded-full px-2 py-1 text-sm mr-2 mb-2"
+            className="bg-black text-white border border-neutral-600/60 rounded-lg px-2 py-1 text-sm mr-2"
           >
             {tag}
           </span>
@@ -65,7 +65,7 @@ const Projects: React.FC = () => (
         href="https://github.com/feenko/"
         target="_blank"
         rel="noreferrer"
-        className="mt-4"
+        className="mt-5"
       >
         <Button variant="secondary" className="flex items-center">
           <GithubLogo className="h-4 w-4" weight="fill" />
@@ -73,7 +73,7 @@ const Projects: React.FC = () => (
         </Button>
       </a>
 
-      <p className="text-neutral-400 mt-1 text-sm">
+      <p className="text-neutral-400 mt-1.5 text-sm">
         {projects.length} projects in total
       </p>
     </section>

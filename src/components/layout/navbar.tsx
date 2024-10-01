@@ -83,7 +83,7 @@ const Navbar: React.FC = () => {
         <div className="flex items-center mt-4 lg:mt-0 space-x-2">
           <a href="mailto:hi@feenko.lol">
             <Button size="sm" className="h-full">
-              Contact
+              Contact Me
             </Button>
           </a>
         </div>
