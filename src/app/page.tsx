@@ -202,7 +202,7 @@ export default async function Home() {
                 alt={tech.name}
                 width={50}
                 height={50}
-                className='mx-6 opacity-40 md:mx-8'
+                className='mx-6 opacity-40 transition-opacity duration-150 hover:opacity-90 md:mx-8'
               />
             </a>
           ))}
