@@ -26,9 +26,7 @@ const markdownIt = new MarkdownIt({
   .use(tasklist);
 
 interface PostPageProps {
-  params: {
-    slug: string;
-  };
+  params: Promise<{ slug: string }>;
 }
 
 export default async function PostPage({ params }: PostPageProps) {
