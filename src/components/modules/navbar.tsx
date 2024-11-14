@@ -1,10 +1,11 @@
 'use client';
 
 import { AlignJustify, ArrowUpRight } from 'lucide-react';
-import Link from 'next/link';
-import { useState } from 'react';
-import { cn } from '~/lib/utils';
+
 import { Button } from '../ui/button';
+import Link from 'next/link';
+import { cn } from '~/lib/utils';
+import { useState } from 'react';
 
 export function HamburgerIcon({
   isOpen,
@@ -89,9 +90,7 @@ export function Navbar() {
           <NavbarLink href='/showcase' disabled>
             Projects
           </NavbarLink>
-          <NavbarLink href='/blog' disabled>
-            Blog
-          </NavbarLink>
+          <NavbarLink href='/blog'>Blog</NavbarLink>
           <NavbarLink href='https://github.com/feenko' external>
             Github
           </NavbarLink>

@@ -1,5 +1,5 @@
-import { execSync } from 'child_process';
 import type { NextConfig } from 'next';
+import { execSync } from 'child_process';
 
 const commitHash = execSync('git rev-parse --short HEAD').toString().trim();
 

@@ -1,4 +1,4 @@
-export type GitHubUser = {
+export type GithubUser = {
   login: string;
   id: number;
   node_id: string;

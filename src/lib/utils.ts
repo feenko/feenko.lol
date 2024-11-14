@@ -5,7 +5,23 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export const technologies = [
+export function formatDate(date: string): string {
+  return new Date(date).toLocaleString('en-US', {
+    timeZone: 'UTC',
+    dateStyle: 'long',
+  });
+}
+
+export function estimateReadingTime(
+  text: string,
+  wordsPerMinute = 238,
+): string {
+  const words = text.trim().split(/\s+/).length;
+  const time = Math.ceil(words / wordsPerMinute);
+  return time > 1 ? `${time} minutes` : `${time} minute`;
+}
+
+export const technologies: { name: string; path: string; url: string }[] = [
   {
     name: 'TypeScript',
     path: '/typescript.svg',
@@ -70,5 +86,33 @@ export const technologies = [
     name: 'Docker',
     path: '/docker.svg',
     url: 'https://www.docker.com',
+  },
+];
+
+export const repos: { name: string; description: string }[] = [
+  {
+    name: 'feenko/feenko.lol',
+    description:
+      'My personal portfolio website showcasing my projects. Built with Next.JS.',
+  },
+  {
+    name: 'meteor-discord/application',
+    description:
+      'Meteor is an open-source Discord application aiming to revolutionize the landscape with innovative features and seamless user experiences.',
+  },
+  {
+    name: 'meteor-discord/website',
+    description:
+      'Open-source website for open-source discord application Meteor.',
+  },
+  {
+    name: 'feenko/spotify-3d-keychain',
+    description:
+      'A beautifully designed and user-friendly 3D model generator for Spotify Keychains',
+  },
+  {
+    name: 'Fractify-Studios/docs',
+    description:
+      'Documentation website for Fractify Studios, built with Next.JS and Fumadocs',
   },
 ];

@@ -9,12 +9,19 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@mdit/plugin-abbr": "^0.13.1",
+    "@mdit/plugin-mathjax": "^0.13.1",
+    "@mdit/plugin-tasklist": "^0.13.1",
     "@radix-ui/react-avatar": "^1.1.1",
     "@radix-ui/react-slot": "^1.1.0",
+    "@tailwindcss/typography": "^0.5.15",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "embla-carousel-react": "^8.3.1",
+    "gray-matter": "^4.0.3",
     "lucide-react": "^0.456.0",
+    "markdown-it": "^14.1.0",
+    "mathjax-full": "^3.2.2",
     "next": "15.0.3",
     "react": "19.0.0-rc-66855b96-20241106",
     "react-dom": "19.0.0-rc-66855b96-20241106",
@@ -23,11 +30,13 @@
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
+    "@types/markdown-it": "^14.1.2",
     "@types/node": "^22.9.0",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "eslint": "^9.14.0",
     "eslint-config-next": "15.0.3",
+    "eslint-plugin-import": "^2.31.0",
     "postcss": "^8.4.49",
     "prettier-plugin-tailwindcss": "^0.6.8",
     "tailwindcss": "^3.4.14",
