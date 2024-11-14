@@ -1,4 +1,5 @@
 import { createMathjaxInstance, mathjax } from '@mdit/plugin-mathjax';
+import { getPostContent, getPostsMetadata } from '~/lib/posts';
 
 import { ArrowLeft } from 'lucide-react';
 import { Footer } from '~/components/modules/footer';
@@ -6,11 +7,8 @@ import Link from 'next/link';
 import MarkdownIt from 'markdown-it';
 import { abbr } from '@mdit/plugin-abbr';
 import { estimateReadingTime } from '~/lib/utils';
-import { getPostContent } from '~/lib/posts';
 import { notFound } from 'next/navigation';
 import { tasklist } from '@mdit/plugin-tasklist';
-
-export const runtime = 'edge';
 
 const mathjaxInstance = createMathjaxInstance({
   output: 'chtml',
@@ -29,6 +27,11 @@ const markdownIt = new MarkdownIt({
 
 interface PostPageProps {
   params: Promise<{ slug: string }>;
+}
+
+export async function generateStaticParams() {
+  const posts = await getPostsMetadata();
+  return posts.map((post) => ({ slug: post.slug }));
 }
 
 export default async function PostPage({ params }: PostPageProps) {
