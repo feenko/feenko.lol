@@ -45,7 +45,22 @@ export const technologies: { name: string; path: string; url: string }[] = [
   {
     name: 'React',
     path: '/react.svg',
-    url: 'https://reactjs.org',
+    url: 'https://react.dev',
+  },
+  {
+    name: 'Node.JS',
+    path: '/nodejs.svg',
+    url: 'https://nodejs.org/en',
+  },
+  {
+    name: 'ESLint',
+    path: '/eslint.svg',
+    url: 'https://eslint.org',
+  },
+  {
+    name: 'Prettier',
+    path: '/prettier.svg',
+    url: 'https://prettier.io',
   },
   {
     name: 'PostgresQL',
@@ -86,6 +101,11 @@ export const technologies: { name: string; path: string; url: string }[] = [
     name: 'Docker',
     path: '/docker.svg',
     url: 'https://www.docker.com',
+  },
+  {
+    name: 'psHost',
+    path: '/pshost.svg',
+    url: 'https://pshost.cloud/',
   },
 ];
 
