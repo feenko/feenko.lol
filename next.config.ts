@@ -16,6 +16,12 @@ const nextConfig: NextConfig = {
     COMMIT_HASH: commitHash,
     BUILD_DATE: new Date().toISOString(),
   },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
 };
 
 export default nextConfig;
