@@ -10,6 +10,8 @@ import { getPostContent } from '~/lib/posts';
 import { notFound } from 'next/navigation';
 import { tasklist } from '@mdit/plugin-tasklist';
 
+export const runtime = 'edge';
+
 const mathjaxInstance = createMathjaxInstance({
   output: 'chtml',
   chtml: {
