@@ -27,7 +27,7 @@ export default async function Home() {
   return (
     <>
       <div className='bg-grid mx-auto flex min-h-screen flex-col items-center justify-center gap-6 px-4 sm:px-8 md:px-12 xl:flex-row xl:px-20'>
-        <div className='mt-32 flex-1 text-center xl:mt-0 xl:text-left'>
+        <div className='mt-32 max-w-2xl flex-1 text-center xl:mt-0 xl:text-left'>
           <h1 className='text-5xl font-semibold'>
             Feenko
             <span className='hidden xl:inline'>_</span>
