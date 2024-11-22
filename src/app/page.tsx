@@ -33,7 +33,7 @@ export default async function Home() {
             <span className='hidden xl:inline'>_</span>
           </h1>
           <p className='mt-3 text-lg text-muted-foreground xl:text-xl'>
-            Developer, Designer, and Taco Hemingway lover.
+            Fullstack developer.
             <br />
             Available for work and collaborations.
           </p>
